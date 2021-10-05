@@ -1,3 +1,5 @@
+package EjercicioFacultad;
+
 public class Estudiante extends Persona{
 
     private String nombre;

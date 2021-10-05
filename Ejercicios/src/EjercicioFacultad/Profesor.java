@@ -1,3 +1,5 @@
+package EjercicioFacultad;
+
 public class Profesor extends Persona{
 
     private double sueldoBasico;

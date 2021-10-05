@@ -1,3 +1,5 @@
+package EjercicioFacultad;
+
 import java.util.ArrayList;
 
 public class Carrera implements Informacion {
