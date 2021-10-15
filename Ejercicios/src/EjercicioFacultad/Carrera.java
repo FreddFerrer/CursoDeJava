@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Carrera implements Informacion {
 
     private String nombre;
-    private ArrayList<Materia> coleccionMaterias;
+    private ArrayList<Materia> colMaterias;
 
-    public Carrera() {
-    }
 
-    public Carrera(String nombre, ArrayList<Carrera> coleccionCarreras) {
+    public Carrera(String nombre, ArrayList<Materia> colMaterias) {
         this.nombre = nombre;
-        this.coleccionMaterias = coleccionMaterias;
+        this.colMaterias = colMaterias;
     }
 
     public String getNombre() {
@@ -24,33 +22,33 @@ public class Carrera implements Informacion {
     }
 
     public ArrayList<Materia> getColeccionCarreras() {
-        return coleccionMaterias;
+        return colMaterias;
     }
 
     public void setColeccionCarreras(ArrayList<Materia> coleccionCarreras) {
-        this.coleccionMaterias = coleccionCarreras;
+        this.colMaterias = coleccionCarreras;
     }
 
     @Override
     public int verCantidad() {
-        return this.coleccionMaterias.size();
+        return this.colMaterias.size();
     }
 
     @Override
     public String ListarContenidos() {
-        String str = "Listado de las materias en la carrera " + this.nombre + ":\n" + this.coleccionMaterias;
+        String str = "Listado de las materias en la carrera " + this.nombre + ":\n" + this.colMaterias;
         return str;
     }
 
     public void agregarMateria(Materia materias){
-        this.coleccionMaterias.add(materias);
+        this.colMaterias.add(materias);
     }
 
     public void removerMateria(String nombreMateria){
         boolean contiene = false;
-        for (Materia elemento : coleccionMaterias){
+        for (Materia elemento : colMaterias){
             if (elemento.getNombre() == nombreMateria){
-                this.coleccionMaterias.remove(elemento);
+                this.colMaterias.remove(elemento);
                 contiene = true;
             }
         }
@@ -63,7 +61,7 @@ public class Carrera implements Informacion {
 
     public void encontrarMateria (String nombreMateria){
         boolean contiene = false;
-        for (Materia mat : coleccionMaterias){
+        for (Materia mat : colMaterias){
             if (mat.getNombre() == nombreMateria) {
                 continue;
             }
@@ -75,5 +73,10 @@ public class Carrera implements Informacion {
         } else {
             System.out.println("Materia no encontrada!!!!");
         }
+    }
+
+    public String toString() {
+        String str = String.format("CARRERA %s\n" + "%s\n", this.nombre, this.colMaterias);
+        return str;
     }
 }

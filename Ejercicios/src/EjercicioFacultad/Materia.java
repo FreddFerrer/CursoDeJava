@@ -8,12 +8,11 @@ public class Materia implements Informacion{
     private String profesor;
     private ArrayList <Estudiante> coleccionEstudiantes;
 
-    public Materia() {
-    }
 
     public Materia(String nombre, String profesor, ArrayList<Estudiante> coleccionEstudiantes) {
         this.nombre = nombre;
         this.profesor = profesor;
+        this.coleccionEstudiantes = new ArrayList<>();
         this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
@@ -43,12 +42,17 @@ public class Materia implements Informacion{
 
     @Override
     public int verCantidad() {
-        return 0;
+        return this.coleccionEstudiantes.size();
     }
 
     @Override
     public String ListarContenidos() {
-        return null;
+        String str = "Listado de Estudiantes en la materia " + this.nombre + "\n";
+        for (Estudiante est : this.coleccionEstudiantes) {
+            str += est.getApellido().toUpperCase();
+            str += " " + est.getNombre() + " \n";
+        }
+        return str;
     }
 
     public void agregarEstudiante (Estudiante estudiante){
@@ -68,5 +72,11 @@ public class Materia implements Informacion{
         } else {
             System.out.println("Estudiante NO encontrado!!!!");
         }
+    }
+
+    public String toString() {
+        String str = String.format("Materia %s\n" + "%s\n" + "%s\n", this.nombre.toUpperCase(), this.profesor,
+                this.coleccionEstudiantes);
+        return str;
     }
 }
