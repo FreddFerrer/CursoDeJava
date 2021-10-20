@@ -1,15 +1,23 @@
 package TGN1;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Salas {
     private int capacidad;
     private String pelicula;
     private String nombre;
-    private String[] espectadores;
+    private List<Espectadores> espectadores;
 
     public Salas(int capacidad, String nombre) {
         this.capacidad = capacidad;
+        this.nombre = nombre;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -25,25 +33,22 @@ public class Salas {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public String[] getEspectadores() {
+    public List<Espectadores> getEspectadores() {
         return espectadores;
     }
 
-    public void setEspectadores(String[] espectadores) {
+    public void setEspectadores(List<Espectadores> espectadores) {
         this.espectadores = espectadores;
     }
 
     @Override
     public String toString() {
         return "Salas{" +
-                "capacidad=" + capacidad +
-                ", pelicula='" + pelicula + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", espectadores=" + Arrays.toString(espectadores) +
+                "capacidad: " + capacidad + "   /   " +
+                "pelicula: " + pelicula + "   /   " +
+                "nombre: " + nombre + "   /   " +
+                "espectadores: " + espectadores +
                 '}';
     }
 }

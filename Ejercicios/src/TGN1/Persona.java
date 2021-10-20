@@ -25,15 +25,8 @@ public abstract class Persona {
         this.edad = edad;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                '}';
-    }
 
-    public abstract void rolPersona();
+    public abstract String getTipo();
 
-    public abstract void datosPersona();
+    public abstract String toString();
 }

@@ -1,10 +1,12 @@
 package TGN1;
 
+import java.util.List;
+
 public class Espectadores extends Persona{
     private int silla;
-    private char fila;
+    private String fila;
 
-    public Espectadores(String nombre, int edad, char fila, int silla) {
+    public Espectadores(String nombre, int edad, String fila, int silla) {
         super(nombre, edad);
         this.fila = fila;
         this.silla = silla;
@@ -14,17 +16,22 @@ public class Espectadores extends Persona{
         return silla;
     }
 
-    public char getFila() {
+    public String getFila() {
         return fila;
     }
 
     @Override
-    public void rolPersona() {
-
+    public String getTipo() {
+        return getClass().getName();
     }
 
     @Override
-    public void datosPersona() {
-
+    public String toString() {
+        return "\nnombre: " + getNombre() + "   /   " +
+                "\tedad: " + getEdad() + "   /   "+
+                "\tfila: " + fila + "   /   "+
+                "\tsilla: " + silla;
     }
+
+
 }

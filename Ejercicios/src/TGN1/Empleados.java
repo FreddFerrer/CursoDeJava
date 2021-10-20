@@ -7,6 +7,10 @@ public class Empleados extends Persona{
         super(nombre, edad);
     }
 
+    public Empleados(String nombre, int edad, double sueldo) {
+        super(nombre, edad);
+        this.sueldo = sueldo;
+    }
 
     public double getSueldo() {
         return sueldo;
@@ -17,12 +21,14 @@ public class Empleados extends Persona{
     }
 
     @Override
-    public void rolPersona() {
-
+    public String getTipo() {
+        return getClass().getName();
     }
 
     @Override
-    public void datosPersona() {
-
+    public String toString() {
+        return "\nnombre: " + getNombre() + "  /  " +
+                "\tedad: " + getEdad() + "   /   " +
+                "\tsueldo: " + sueldo;
     }
 }
