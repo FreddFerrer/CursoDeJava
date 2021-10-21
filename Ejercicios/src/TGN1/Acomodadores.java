@@ -1,5 +1,7 @@
 package TGN1;
 
+import java.util.List;
+
 public class Acomodadores extends Empleados implements ParaAcomodadores{
 
     private Salas sala;
@@ -33,6 +35,18 @@ public class Acomodadores extends Empleados implements ParaAcomodadores{
     @Override
     public void setSala(Salas sala) {
         this.sala = sala;
+    }
+
+    public static void mostrarAcomodadores(List<Acomodadores> listaAcomodadores) {
+        System.out.println("\nLista de acomodadores:");
+
+        if (listaAcomodadores.size() == 0)
+            System.out.println("No hay acomodadores cargados.");
+        else {
+            for (Acomodadores acomodadores : listaAcomodadores) {
+                System.out.println(acomodadores);
+            }
+        }
     }
 }
 

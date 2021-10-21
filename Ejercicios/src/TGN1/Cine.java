@@ -83,6 +83,7 @@ public class Cine {
             System.out.println("No hay empleados cargados.");
         else {
             for (Empleados empleados : listaEmpleados) {
+                empleados.getNombre();
                 System.out.println(empleados);
             }
         }
@@ -180,6 +181,7 @@ public class Cine {
                 salir = true;
             } else {
                 System.out.println("ERROR, OPCION NO EXISTENTE");
+                System.exit(1);
             }
 
         }
