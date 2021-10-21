@@ -177,11 +177,8 @@ public class Cine {
                 acomodador1.setSueldo(sueldoAcomodador);
                 System.out.println(acomodador1);
                 System.out.println("Sueldo modificado");
-            } else if (opcion == 0){
+            } else if (opcion == 8){
                 salir = true;
-            } else {
-                System.out.println("ERROR, OPCION NO EXISTENTE");
-                System.exit(1);
             }
 
         }
