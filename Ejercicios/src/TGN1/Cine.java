@@ -115,12 +115,17 @@ public class Cine {
     }
 
     public static void main(String[] args) {
+
+        int opcion;
+        boolean salir = false;
+        int sueldoAcomodador;
+
         Scanner entrada = new Scanner(System.in);
         ArrayList<Espectadores> espectadores = new ArrayList<>();
         ArrayList<Empleados> empleados = new ArrayList<>();
         ArrayList<Acomodadores> acomodadores = new ArrayList<>();
 
-        int opcion = 0, bandera = 0, sueldoAcomodador;
+
 
         System.out.println("*****Programa Gestión de Cine*****");
 
@@ -132,35 +137,25 @@ public class Cine {
 
         System.out.println("\n\n*****EMPLEADOS*****");
         Empleados empleado1 = new Empleados("Ramon Gomez", 32);
-        System.out.println("\nEmpleado designado a la sala: " + "\n" + empleado1.toString());
+        System.out.println("\nEmpleado designado a la sala: " + "\n"  + empleado1);
 
         System.out.println("\n\n*****ACOMODADORES*****");
         Acomodadores acomodador1 = new Acomodadores("Josefina", 25);
-        System.out.println("\nAcomodador designado a la sala: " + "\n" + acomodador1.toString());
+        System.out.println("\nAcomodador designado a la sala: "  + "\n" + acomodador1);
 
+        while (!salir){
+            System.out.println("\n\nMENU");
+            System.out.println("Digite un numero:");
+            System.out.println("     1- Crear nueva sala");
+            System.out.println("     2- Crear nuevo espectador");
+            System.out.println("     3- Mostrar espectadores");
+            System.out.println("     4- Crear nuevo empleado");
+            System.out.println("     5- Mostrar empleados");
+            System.out.println("     6- Mostrar acomodadores");
+            System.out.println("     7- Modificar sueldo acomodador");
+            System.out.println("     8- Salir");
 
-        do {
-            do {
-                System.out.println("\n\nMENU");
-                System.out.println("Digite un numero:");
-                System.out.println("     1- Crear nueva sala");
-                System.out.println("     2- Crear nuevo espectador");
-                System.out.println("     3- Mostrar espectadores");
-                System.out.println("     4- Crear nuevo empleado");
-                System.out.println("     5- Mostrar empleados");
-                System.out.println("     6- Mostrar acomodadores");
-                System.out.println("     7- Modificar sueldo acomodador");
-                System.out.println("     8- Salir");
-
-                opcion = entrada.nextInt();
-
-                if (opcion <= 8 && opcion >= 1) {
-                    bandera = 1;
-                } else {
-                    System.out.println("Error");
-                }
-
-            } while (bandera == 0);
+            opcion = entrada.nextInt();
 
             if (opcion == 1){
                 System.out.println("\n\n*****CREANDO NUEVA SALA*****");
@@ -182,13 +177,12 @@ public class Cine {
                 System.out.println(acomodador1);
                 System.out.println("Sueldo modificado");
             } else if (opcion == 0){
-                bandera = 1;
+                salir = true;
+            } else {
+                System.out.println("ERROR, OPCION NO EXISTENTE");
             }
 
-        } while (bandera == 0);
-
-
-
+        }
 
         
         /*Espectadores espectador1 = new Espectadores("Rodrigo Saforcada", 23, "A", 3);

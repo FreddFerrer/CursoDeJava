@@ -27,8 +27,7 @@ public class Empleados extends Persona{
 
     @Override
     public String toString() {
-        return "\nombre: " + getNombre() + "  /  " +
-                "\nedad: " + getEdad() + "   /   " +
-                "\nsueldo: " + sueldo;
+        return "\nnombre: " + getNombre() +
+                "\nedad: " + getEdad();
     }
 }
