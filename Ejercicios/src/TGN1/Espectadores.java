@@ -27,10 +27,10 @@ public class Espectadores extends Persona{
 
     @Override
     public String toString() {
-        return "\nnombre: " + getNombre() + "   /   " +
-                "\tedad: " + getEdad() + "   /   "+
-                "\tfila: " + fila + "   /   "+
-                "\tsilla: " + silla;
+        return "\nombre: " + getNombre() + "   /   " +
+                "\nedad: " + getEdad() + "   /   "+
+                "\nfila: " + fila + "   /   "+
+                "\nsilla: " + silla;
     }
 
 
