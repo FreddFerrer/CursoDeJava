@@ -1,15 +1,10 @@
 package TGN1;
 
-public class Empleados extends Persona{
+public class Empleados extends Personas {
     private double sueldo;
 
     public Empleados(String nombre, int edad) {
         super(nombre, edad);
-    }
-
-    public Empleados(String nombre, int edad, double sueldo) {
-        super(nombre, edad);
-        this.sueldo = sueldo;
     }
 
     public double getSueldo() {
@@ -21,13 +16,13 @@ public class Empleados extends Persona{
     }
 
     @Override
-    public String getTipo() {
-        return getClass().getName();
+    public String toString(){
+        return "\nnombre =" + getNombre() +
+                "\nedad = " + getEdad();
     }
 
     @Override
-    public String toString() {
-        return "\nnombre: " + getNombre() +
-                "\nedad: " + getEdad();
+    public String getTipo(){
+        return getClass().getName();
     }
 }

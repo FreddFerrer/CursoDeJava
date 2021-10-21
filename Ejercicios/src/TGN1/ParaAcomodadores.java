@@ -1,7 +1,8 @@
 package TGN1;
 
 public interface ParaAcomodadores {
+
     Salas getSala();
 
-    void setSala(Salas sala);
+    void setSala(Salas nuevaSala);
 }

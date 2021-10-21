@@ -1,10 +1,10 @@
 package TGN1;
 
-public abstract class Persona {
+public abstract class Personas {
     private String nombre;
     private int edad;
 
-    public Persona(String nombre, int edad) {
+    public Personas(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
@@ -24,7 +24,6 @@ public abstract class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
 
     public abstract String getTipo();
 
